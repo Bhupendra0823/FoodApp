@@ -36,7 +36,6 @@ export class OrderComponent {
       }
 
       updateStatus() {
-        // Method to update the orderStatus when the dropdown selection changes
         this.previewData.orderStatus = this.selectedStatus;
         console.log(this.previewData.orderStatus)
         console.log(this.previewData.tableID)

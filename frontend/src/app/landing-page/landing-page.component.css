@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
-/* Common styles for both screen sizes */
 .background {
   background-image: url("../../assets/WelcomePage.jpg");
   background-size: 100% auto;

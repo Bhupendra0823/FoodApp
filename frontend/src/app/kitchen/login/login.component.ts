@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private authGuard: AuthGuard, // Add the AuthGuard as a dependency
+    private authGuard: AuthGuard, 
     private toastr: ToastrService
     ) {}
 
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       (response) => {
         console.log(response);
         this.toastr.success('Login Successful');
-        this.authGuard.isLoggedIn = true; // Update the isLoggedIn property in the AuthGuard
+        this.authGuard.isLoggedIn = true; 
         this.goToDashboard();
         this.form.reset();
       }

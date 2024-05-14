@@ -12,7 +12,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class MenuComponent implements OnInit {
   form!: FormGroup;
   allMenu!: any;
-  selectedItem: any; // New property to hold the selected menu item
+  selectedItem: any; 
   updateOrAddNew: string = 'Add Item';
 
   constructor(
@@ -58,7 +58,6 @@ export class MenuComponent implements OnInit {
   updateMenu(menu: any) {
     this.toastr.info('Update the menu item.');
     this.updateOrAddNew = 'Update Item';
-    // Set the selected menu item and populate the form
     this.selectedItem = menu;
     this.form.patchValue({
       name: menu.name,
@@ -86,7 +85,6 @@ export class MenuComponent implements OnInit {
   }
 
   onSubmit() {
-    // Perform API request to update the selected menu item
     if (this.selectedItem) {
       const updateEndpoint = `http://localhost:9000/kitchen/update/${this.selectedItem._id}`;
       const updatePayload = {
@@ -100,8 +98,8 @@ export class MenuComponent implements OnInit {
         (response) => {
           console.log('Menu item updated successfully.');
           this.toastr.success('Menu item updated successfully.');
-          this.fetchMenu(); // Fetch the updated menu items
-          this.resetForm(); // Reset the form
+          this.fetchMenu(); 
+          this.resetForm(); 
         },
         (error) => {
 

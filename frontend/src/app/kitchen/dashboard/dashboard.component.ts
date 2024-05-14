@@ -17,7 +17,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
 
-    // Get all customers
     this.http
       .get('http://localhost:9000/kitchen/home')
       .subscribe((response) => {

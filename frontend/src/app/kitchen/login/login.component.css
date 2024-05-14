@@ -1,6 +1,5 @@
-/* Styles for the form container */
 .form-container {
-  width: 80%; /* Adjust the width as needed */
+  width: 80%; 
   margin: 0 auto;
   margin-top: 20px;
   border: 1px solid #ccc;
@@ -9,7 +8,6 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Center the heading */
 h2.text-center {
   text-align: center;
 }
@@ -19,7 +17,6 @@ h2.text-center {
   font-family: 'Montserrat', sans-serif;
   color: #565C64;
   margin-bottom: 20px;
-  /* text-align: center; */
 }
 .large-btn {
 font-size: 1.5rem;
@@ -60,14 +57,12 @@ border: 1px solid #565C64;
   text-align: center;
   line-height: 1.2;
 }
-/* Styles for the login buttons */
 .loginButtonDiv {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-/* Add media queries for responsiveness */
 @media (max-width: 768px) {
   .form-container {
     width: 90%;
