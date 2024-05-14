@@ -1,0 +1,110 @@
+
+    landingpage
+    frontend
+    customer module
+        detail component
+            ->import required packages 
+                formBuilder ,
+                formGroup , 
+                Validators , 
+                ActivatedRoute , 
+                Router , 
+                HttpClients , 
+                ToastrService
+            ->get table ID from URL 
+            ->create form with fields (Name , Email , phone)
+            ->submit form data to database using POST request using API ("") 
+            ->navigate to menu
+        menu component
+            ->import required packages
+                ActivatedRoute
+                Router
+                HttpClients
+                ToastrService
+            ->Create Interfaces 
+            ->initial functions (ngOnInit)
+                get table ID from URL
+                GET request tofetch menu items form database using API ("")
+            ->classify items into item category
+            ->increase / decrease function
+            ->save that items which have more than 1 selectedItem and save it to to array
+            ->pass that array of selectedItem to saveDataToDB()
+            ->saveDataToDB() hits update API ("") to update desireOrder for that table Customer Data
+
+
+        preview component
+            ->import required packages
+                ActivatedRoute
+                Router
+                HttpClients
+                ToastrService
+            ->initial functions (ngOnInit)
+                ->get table ID from URL
+                ->get request to fetch customer details to preview using API ("") and save it to previewData
+                (In html iterate that previewData to show customer details)
+            ->totalQuantity() function to do calculation to generate bill
+                1.total items
+                2.total amount
+                3.total tax (CGST = 2.5% + SGST = 2.5%)
+                4.Grand total (total amount + total tax)
+                5.Grand Total after Roundoff  
+                6.Round Off value  
+            ->Confirm order 
+                ->Show toastr message for success
+                ->Navigate to Thank you with table ID as queryParams
+            ->Cancel order
+                ->request delete API ("") to delete that customer data from database search by table ID
+                ->Show toastr message for successfully delete
+                ->Navigate to landing page
+            ->Edit order
+                ->Show toastr message for "re-order your food"
+                ->Navigate to menu with table ID as queryParams
+        thank you
+            ->import required packages
+                ActivatedRoute
+                HttpClients
+                ToastrService
+                onDestroy
+                interval
+                subscription
+                takeWhile
+            ->initial functions (ngOnInit)
+                ->get table ID from URL
+                ->call loadData() function to fetch customer data from database using API ("")
+                ->use rxjs interval to call loadData() function every 2 seconds
+            ->loadData() function
+                ->GET request to fetch customer details and fetch only name and orderStatus using API ("") 
+            ->ngOnDestroy() function
+                ->unsubscribe subscription
+
+
+
+
+
+    kitchen module
+        login component
+            ->import required packages
+                formBuilder ,
+                formGroup , 
+                Validators , 
+                ActivatedRoute , 
+                Router , 
+                HttpClients , 
+                ToastrService
+        dashboard component
+        order component
+        menu (Kitchen Control) component
+
+
+
+    landingPage component
+        ->Go To Customer
+            form to enter table ID and got to detail with that table ID
+        ->Go To kitchen (Staff)
+            Navigate button ot login
+
+
+
+backend
+    customer
+    kitchen

@@ -1,0 +1,62 @@
+<div class="background"></div>
+<div class="container bill-container">
+  <div class="bill-section">
+    <h3>Restaurant Detail</h3>
+    <p class="bill-info">The EMY'S Kitchen</p>
+    <p class="bill-info">Address: 123, ABC Road, XYZ City</p>
+    <p class="bill-info">Phone: 1234567890</p>
+  </div>
+  <hr>
+
+  <div class="bill-section">
+    <h3>Customer Detail</h3>
+    <p class="bill-info">Name: {{ previewData.name }}</p>
+    <p class="bill-info">Email: {{ previewData.email }}</p>
+    <p class="bill-info">Mobile: {{ previewData.mobile }}</p>
+  </div>
+  <hr>
+
+  <div class="bill-section">
+    <table class="table bill-table">
+      <thead>
+        <tr>
+          <th>Item No.</th>
+          <th>Item Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of previewData.desireOrder; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.quantity * item.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+
+  <div class="bill-section">
+    <h3></h3>
+    <p>Total Qty: {{ totalItem }}</p>
+    <p>Sub Total: {{ totalAmount }}</p>
+    <p>CGST: 2.5% {{ totalAmount * 0.025 }}</p>
+    <p>SGST: 2.5% {{ totalAmount * 0.025 }}</p>
+  </div>
+  <hr>
+
+  <div class="bill-section">
+    <h4>Round off: {{ roundOff }}</h4>
+    <h2>Grand Total: {{ grandTotalAfterRoundOff }}</h2>
+  </div>
+
+  <div class="bill-section">
+    <button class="btn btn-primary mb-3" (click)="goToEditMenu()">Update</button>&nbsp;
+    <button class="btn btn-success mb-3" (click)="confirmOrder()">Confirm</button>&nbsp;
+    <button class="btn btn-danger mb-3" (click)="deleteCancel()">Cancel</button>
+  </div>
+</div>

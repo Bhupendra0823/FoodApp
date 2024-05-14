@@ -1,0 +1,45 @@
+<div class="background"></div>
+<div class="container">
+  <h2 class="mt-4">Order Details - Table No: {{ previewData?.tableID }}</h2>
+  <div class="row detailAndStatus mt-3">
+
+    <div class="col-md-8 customerDetail">
+      <p><strong>Name:</strong> {{ previewData?.name }}</p>
+      <p><strong>Email:</strong> {{ previewData?.email }}</p>
+      <p><strong>Mobile:</strong> {{ previewData?.mobile }}</p>
+    </div>
+
+    <div class="col-md-4 chooseStatus">
+      <label for="status">Choose Status:</label>
+      <select class="form-control" id="status" [(ngModel)]="selectedStatus" (ngModelChange)="updateStatus()">
+        <option value="pending">Pending</option>
+        <option value="cooking">Cooking</option>
+        <option value="ready">Ready</option>
+        <option value="served">Served</option>
+      </select>
+    </div>
+
+  </div>
+
+  <hr class="my-4">
+
+  <h3>Order Detail</h3>
+  <table class="table table-striped tableCustom">
+    <thead class="thead-dark">
+      <tr>
+        <th>Food Name</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of previewData?.desireOrder">
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="mt-4">
+    <button class="btn btn-primary mr-2" (click)="goToBack()">Back</button>&nbsp;
+    <button class="btn btn-danger" (click)="completeOrder(previewData?.tableID)">Complete</button>
+  </div>
+</div>

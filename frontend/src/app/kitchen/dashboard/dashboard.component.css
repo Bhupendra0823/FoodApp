@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+.headingText {
+  font-size: 4.5vw;
+  font-family: 'Lugrasimo', sans-serif;
+  text-shadow: 2px 2px 10px #565C64;
+  color: #FFD98E;
+  margin-bottom: 5%;
+  text-align: center;
+  line-height: 1.2;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.navController{
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.mainContainer{
+  margin-top: 20px;
+}
+.controlButton {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.left-button {
+  margin-right: auto;
+}
+
+.right-button {
+  margin-left: auto;
+}
+
+.card-tile {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+
+  border: 10px solid #6a6464;
+  box-shadow: 0 0 500px #EAEAEA;
+  background-color: #f5f5f5;
+
+  /* border: 10px solid #FFD98E; */
+  background-color: #f8f9fa;
+  box-shadow: 0 0 50px #FFD98E;
+}
+.card-tile:hover {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 10px solid #FFD98E;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 0 50px #FFD98E;
+}
+.card-header-tile {
+  text-align: center;
+}
+
+.card-body-tile {
+  margin-top: 10px;
+}
+
+.card-footer-tile {
+  margin-top: 10px;
+  text-align: center;
+}
+.background {
+  background-image: url(../../../assets/WelcomePage.jpg);
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+}
+.large-btn {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin-top: 3%;
+  border-radius: 20px;
+
+  background-color: #FFD98E;
+  color: #565C64;
+  box-shadow: 0 0 10px #565C64;
+  border: 1px solid #565C64;
+}
+.rolesText {
+  font-size: 2vw;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  color: #565C64;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.large-btn:hover {
+  color: #FFD98E;
+  box-shadow: 0 0 10px #FFD98E;
+  border: 1px solid yellow;
+  background-color: #565C64;
+}
+
+
+/* ... (Other CSS styles) ... */
+.menu-btn{
+  background-color: transparent;
+  border: 2 px solid #565C64;
+  color: #565C64;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.logout-btn{
+  background-color: transparent;
+  border: 2 px solid #565C64;
+  color: #565C64;
+  border-radius: 50%;
+  padding: 10px;
+}
+.menu-btn:hover{
+  background-color: transparent;
+  border: 2 px solid #565C64;
+  color: #FFD98E;
+  border-radius: 50%;
+  padding: 10px;
+}
+.logout-btn:hover{
+  background-color: transparent;
+  border: 2 px solid #565C64;
+  color: #FFD98E;
+  border-radius: 50%;
+  padding: 10px;
+}
+/* Set the background image and style for the icon */
+.logout-icon {
+  display: inline-block;
+  width: 50px; /* Adjust the width and height as needed for your icon */
+  height: 50px;
+  background-image: url(../../../assets/logout.png); /* Replace with the path to your icon image */
+  background-size: cover;
+  background-position: center;
+  margin-right: 5px;
+  vertical-align: middle;
+  color: #565C64;
+
+  border: 0px;
+  background-color: transparent;
+}
+.menu-icon{
+  display: inline-block;
+  width: 50px; /* Adjust the width and height as needed for your icon */
+  height: 50px;
+  background-image: url(../../../assets/menu.png); /* Replace with the path to your icon image */
+  background-size: cover;
+  background-position: center;
+  margin-right: 5px;
+  vertical-align: middle;
+  color: #565C64;
+
+  border: 0px;
+  background-color: transparent;
+}

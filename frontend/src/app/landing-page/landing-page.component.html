@@ -1,0 +1,25 @@
+<div class="background"></div>
+
+<div class="mainContainer">
+  <h2 class="headingText">
+    Choose your Role
+  </h2>
+  <div class="customerContainer">
+    <h2 class="text-center rolesText">Customer</h2>
+    <form [formGroup]="form">
+      <div class="form-group">
+        <input type="text" formControlName="id" placeholder="Enter ID" class="form-control mb-3" />
+        <div *ngIf="idControl.invalid && (idControl.dirty || idControl.touched)" class="text-danger">
+          <div *ngIf="idControl.errors?.required">ID is required.</div>
+          <div *ngIf="idControl.errors?.pattern">Invalid ID. Please enter a valid numeric value.</div>
+        </div>
+      </div>
+    </form>
+    <button class="large-btn btn-primary text-center" (click)="goToCustomer()">Go to Customer</button>
+  </div>
+
+  <div class="kitchenContainer">
+    <h2 class="text-center mt-2 rolesText">Kitchen Staff</h2>
+    <button class="large-btn btn-primary text-center" (click)="goToKitchen()">Go to Kitchen</button>
+  </div>
+</div>

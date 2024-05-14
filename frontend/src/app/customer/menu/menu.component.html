@@ -1,0 +1,153 @@
+<div class="background"></div>
+<div class="container mainContainer">
+  <h2 class="text-center menuText">Menu</h2>
+
+  <div class="tableButtonContainer">
+    <div *ngFor="let category of categories; let i = index">
+      <div class="categoryContainer">
+        <div
+          class="categoryBackground"
+          [style.background-image]="
+            'url(../../../assets/foodImage' + (i + 1) + '.jpg)'
+          "
+        >
+          <h2 class="text-center menuText">{{ category.name }}</h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of category.items">
+                <td class="categoryText">{{ item.name }}</td>
+                <td class="categoryText">{{ item.price }}</td>
+                <td class="categoryText">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <button
+                        class="btn btn-outline-secondary buttonMinus"
+                        (click)="decreaseQuantity(item); selectedItem()"
+                        [disabled]="!item.available"
+                      >
+                        <svg
+                          class="svgMinus"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="currentColor"
+                          class="bi bi-dash-square"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                          />
+                          <path
+                            d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control input-sm"
+                      [value]="item.quantity ? item.quantity : 0"
+                      [disabled]="!item.available"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn-outline-secondary buttonPlus"
+                        (click)="increaseQuantity(item); selectedItem()"
+                        [disabled]="!item.available"
+                      >
+                        <svg
+                          class="svgPlus"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="currentColor"
+                          class="bi bi-plus-square"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                          />
+                          <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="orderSummaryContainer">
+          <div class="offcanvas-header">
+            <div *ngIf="orderSummary.length == 0">
+              <h2>No Order Selected</h2>
+            </div>
+            <h2 *ngIf="orderSummary.length > 0">Order Summary</h2>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Food Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of orderSummary">
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.quantity }}</td>
+                  <td>{{ item.price }}</td>
+                  <td>{{ item.quantity * item.price }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="offcanvas-footer">
+            <button class="btn btn-primary mt-2 p-3" (click)="submitOrder()">
+              Submit Order</button
+            >&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="orderSummaryButton">
+  <button
+    class="btn btn-primary mt-2"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasExample"
+    aria-controls="offcanvasExample"
+  >
+    Order Summary
+  </button>
+</div>

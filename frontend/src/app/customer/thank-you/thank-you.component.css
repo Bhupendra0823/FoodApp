@@ -1,0 +1,25 @@
+.thank-you-message {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: transparent;
+  opacity: 0.9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.background{
+  background-image: url("../../../assets/WelcomePage.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.4;
+}
+.thank-you-message p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}

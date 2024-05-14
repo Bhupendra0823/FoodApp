@@ -1,0 +1,44 @@
+<div class="background"></div>
+<div class="container">
+  <div class="dataContainer">
+    <p class="quote">Fulfill your comfort food cravings.</p>
+    <div class="textForm">
+
+    <p><span class="tableTag">Table No.:</span> <span class="tableID">{{ id }}</span> </p>
+    <p class="detailInstruction">Please enter your details</p>
+
+
+
+    <form [formGroup]="form" (submit)="onSubmit()" class="my-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="form-control" formControlName="name">
+        <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="text-danger">
+          <div *ngIf="form.controls['name'].errors?.['required']">Name is required.</div>
+          <div *ngIf="form.controls['name'].errors?.['invalidName']">Invalid characters. Only letters and spaces
+            allowed.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" formControlName="email">
+        <div *ngIf="form.controls['email'].invalid && form.controls['email'].touched" class="text-danger">
+          <div *ngIf="form.controls['email'].errors?.['required']">Email is required.</div>
+          <div *ngIf="form.controls['email'].errors?.['email']">Invalid email format.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile" class="form-control" formControlName="mobile">
+        <div *ngIf="form.controls['mobile'].invalid && form.controls['mobile'].touched" class="text-danger">
+          <div *ngIf="form.controls['mobile'].errors?.['required']">Mobile is required.</div>
+          <div *ngIf="form.controls['mobile'].errors?.['invalidMobile']">Invalid mobile format. 10 digits allowed.</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+  </div>
+
