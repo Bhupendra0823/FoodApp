@@ -4,6 +4,7 @@
 Food On Table : in this project user need to scan QR code to open Landing Page for select their role as customer or kitchen Staff.
 Customer can order food through online.
 Kitchen can manage Order and restaurant Menu.
+
 Dummy Kitchen login credentials:
 ```
 email: admin@test
