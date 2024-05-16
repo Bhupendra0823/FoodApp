@@ -15,7 +15,7 @@ Kitchen can manage Order and restaurant Menu.
 
 Clone repository
 
-set *.env* file for credentials with variables:
+set *backend/.env* file for credentials with variables:
 ```
 PORT=<PORT Number on which backend run>
 MONGO_URI=<MongoDB connection string>
