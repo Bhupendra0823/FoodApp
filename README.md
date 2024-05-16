@@ -5,7 +5,11 @@ Food On Table : in this project user need to scan QR code to open Landing Page f
 Customer can order food through online.
 Kitchen can manage Order and restaurant Menu.
 
-
+Dummy Kitchen login credentials:
+```
+email: admin@test
+password: adminTest123
+```
 ## Installation
 #### Dependency:
 
@@ -15,7 +19,7 @@ Kitchen can manage Order and restaurant Menu.
 
 Clone repository
 
-set *.env* file for credentials with variables:
+set *backend/.env* file for credentials with variables:
 ```
 PORT=<PORT Number on which backend run>
 MONGO_URI=<MongoDB connection string>
